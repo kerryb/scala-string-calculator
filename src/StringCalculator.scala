@@ -13,11 +13,7 @@ object StringCalculator {
   }
 
   private def separator(input: String) = {
-    if (input startsWith("//")) {
-      ";"
-    } else {
-      "[,\n]"
-    }
+    if (input startsWith("//")) { ";" } else { "[,\n]" }
   }
 
   private def addNumbers(numbers: Array[Int]) = {
