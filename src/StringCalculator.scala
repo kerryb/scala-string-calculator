@@ -1,9 +1,10 @@
 object StringCalculator {
+  private val separatorRegex = "[,\n]"
   def add(input: String) = {
     if (input isEmpty) {
       0
     } else {
-      val numbers = input.split("[,\n]").map((a) => a.toInt)
+      val numbers = input.split(separatorRegex).map((a) => a.toInt)
       addNumbers(numbers)
     }
   }
