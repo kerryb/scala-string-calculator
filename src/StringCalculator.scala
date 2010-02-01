@@ -3,9 +3,11 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      input.split(",").map(
-        (a) => a.toInt).reduceLeft(
-        (a, b) => a + b)
+      addNumbers(input.split(",").map((a) => a.toInt))
     }
+  }
+
+  private def addNumbers(numbers: Array[Int]) = {
+    numbers.foldLeft(0) { (total, n) => total + n }
   }
 }
