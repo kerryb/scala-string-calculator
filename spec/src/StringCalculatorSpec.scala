@@ -32,7 +32,7 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     }
 
     describe("with negative input") {
-      it("raises a NegativeInputException") {
+      it("throws a NegativeInputException") {
         evaluating { StringCalculator.add("1,-2") } should produce [NegativeInputException]
       }
     }
