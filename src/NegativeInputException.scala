@@ -1,1 +1,2 @@
-class NegativeInputException extends Exception
+class NegativeInputException(message: String)
+  extends Exception(message)

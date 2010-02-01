@@ -23,7 +23,7 @@ object StringCalculator {
   private def addNumbers(numbers: Array[Int]) = {
     val negatives = numbers.filter(n => n < 0)
     if (!negatives.isEmpty) {
-      throw new NegativeInputException
+      throw new NegativeInputException("negatives not allowed: " + negatives(0))
     }
     numbers.foldLeft(0) { (total, n) => total + n }
   }
