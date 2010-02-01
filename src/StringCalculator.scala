@@ -3,13 +3,16 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      val separator = if (input startsWith("//")) {
-        ";"
-      } else {
-        "[,\n]"
-      }
-      val numbers = extractNumbers(input.replaceFirst("^//.*\n", ""), separator)
+      val numbers = extractNumbers(input.replaceFirst("^//.*\n", ""), separator(input))
       addNumbers(numbers)
+    }
+  }
+
+  private def separator(input: String) = {
+    if (input startsWith("//")) {
+      ";"
+    } else {
+      "[,\n]"
     }
   }
 
