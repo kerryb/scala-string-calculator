@@ -3,7 +3,7 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      val numbers = extractNumbers(input.replaceFirst("^//.*\n", ""), separator(input))
+      val numbers = extractNumbers(input)
       addNumbers(numbers)
     }
   }
@@ -16,8 +16,8 @@ object StringCalculator {
     }
   }
 
-  private def extractNumbers(input: String, separator: String) = {
-    input.split(separator).map((a) => a.toInt)
+  private def extractNumbers(input: String) = {
+    input.replaceFirst("^//.*\n", "").split(separator(input)).map((a) => a.toInt)
   }
 
   private def addNumbers(numbers: Array[Int]) = {
