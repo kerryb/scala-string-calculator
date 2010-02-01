@@ -10,6 +10,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("calculates the sum of a single number as itself") {
       StringCalculator.add("1") should equal(1)
     }
+
+    it("calculates the sum of two numbers") {
+      StringCalculator.add("1,41") should equal(42)
+    }
   }
 }
 
