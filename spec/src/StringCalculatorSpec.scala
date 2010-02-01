@@ -18,6 +18,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("calculates the sum of many numbers") {
       StringCalculator.add("1,2,3,4,5") should equal(15)
     }
+
+    it("allows newline-separated numbers") {
+      StringCalculator.add("1\n2\n3") should equal(6)
+    }
   }
 }
 
