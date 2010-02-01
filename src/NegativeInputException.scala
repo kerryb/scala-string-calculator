@@ -1,0 +1,1 @@
+class NegativeInputException extends Exception

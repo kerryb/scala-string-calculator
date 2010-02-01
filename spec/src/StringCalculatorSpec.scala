@@ -30,6 +30,11 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("allows the delimiter to be specified") {
       StringCalculator.add("//;\n1;2") should equal(3)
     }
+
+    describe("with negative input") {
+      it("raises a NegativeInputException") {
+        evaluating { StringCalculator.add("1,-2") } should produce [NegativeInputException]
+      }
+    }
   }
 }
-
