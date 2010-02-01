@@ -32,8 +32,9 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     }
 
     describe ("with negative input") {
-      it ("throws a NegativeInputException") {
-        evaluating { StringCalculator.add("1,-2") } should produce [NegativeInputException]
+      it ("throws a NegativeInputException with the bad number in the message") {
+        val exception = evaluating { StringCalculator.add("1,-2") } should produce [NegativeInputException]
+        exception.getMessage should equal ("negatives not allowed: -2")
       }
     }
   }
