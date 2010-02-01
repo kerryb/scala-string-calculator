@@ -9,7 +9,11 @@ object StringCalculator {
   }
 
   private def extractNumbers(input: String) = {
-    input.replaceFirst("^//.*\n", "").split(separator(input)).map((a) => a.toInt)
+    removeHeader(input).split(separator(input)).map((a) => a.toInt)
+  }
+
+  private def removeHeader(input: String) = {
+    input.replaceFirst("^//.*\n", "")
   }
 
   private def separator(input: String) = {
