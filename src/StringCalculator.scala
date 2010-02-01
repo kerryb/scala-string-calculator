@@ -3,7 +3,9 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      input.toInt
+      input.split(",").map(
+        (a) => a.toInt).reduceLeft(
+        (a, b) => a + b)
     }
   }
 }
