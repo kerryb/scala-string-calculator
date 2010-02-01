@@ -4,9 +4,13 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      val numbers = input.split(separatorRegex).map((a) => a.toInt)
+      val numbers = extractNumbers(input)
       addNumbers(numbers)
     }
+  }
+
+  private def extractNumbers(input: String) = {
+    input.split(separatorRegex).map((a) => a.toInt)
   }
 
   private def addNumbers(numbers: Array[Int]) = {
