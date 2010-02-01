@@ -8,16 +8,16 @@ object StringCalculator {
     }
   }
 
+  private def extractNumbers(input: String) = {
+    input.replaceFirst("^//.*\n", "").split(separator(input)).map((a) => a.toInt)
+  }
+
   private def separator(input: String) = {
     if (input startsWith("//")) {
       ";"
     } else {
       "[,\n]"
     }
-  }
-
-  private def extractNumbers(input: String) = {
-    input.replaceFirst("^//.*\n", "").split(separator(input)).map((a) => a.toInt)
   }
 
   private def addNumbers(numbers: Array[Int]) = {
