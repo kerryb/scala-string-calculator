@@ -3,7 +3,8 @@ object StringCalculator {
     if (input isEmpty) {
       0
     } else {
-      addNumbers(input.split(",").map((a) => a.toInt))
+      val numbers = input.split(",").map((a) => a.toInt)
+      addNumbers(numbers)
     }
   }
 
