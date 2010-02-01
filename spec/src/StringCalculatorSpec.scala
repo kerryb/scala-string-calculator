@@ -6,6 +6,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("calculates the sum of an empty string as 0") {
       StringCalculator.add("") should equal(0)
     }
+
+    it("calculates the sum of a single number as itself") {
+      StringCalculator.add("1") should equal(1)
+    }
   }
 }
 
