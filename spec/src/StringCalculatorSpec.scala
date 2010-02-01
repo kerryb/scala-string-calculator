@@ -14,6 +14,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("calculates the sum of two numbers") {
       StringCalculator.add("1,41") should equal(42)
     }
+
+    it("calculates the sum of many numbers") {
+      StringCalculator.add("1,2,3,4,5") should equal(15)
+    }
   }
 }
 
