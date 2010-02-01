@@ -22,6 +22,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     it("allows newline-separated numbers") {
       StringCalculator.add("1\n2\n3") should equal(6)
     }
+
+    it("allows a mixture of comma and newline separators") {
+      StringCalculator.add("1\n2,3") should equal(6)
+    }
   }
 }
 
