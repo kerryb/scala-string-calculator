@@ -28,8 +28,7 @@ object StringCalculator {
   private def failOnNegativeNumbers(numbers: Array[Int]) = {
     val negatives = numbers.filter(n => n < 0)
     if (!negatives.isEmpty) {
-      val errors = negatives.map((a) => a.toString).reduceLeft((a, b) => a + ", " + b)
-      throw new NegativeInputException("negatives not allowed: " + errors)
+      throw new NegativeInputException(negatives)
     }
   }
 }
