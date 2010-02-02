@@ -32,14 +32,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     }
 
     describe ("with negative input") {
-      it ("throws a NegativeInputException with the bad number in the message") {
-        val exception = evaluating { StringCalculator.add("1,-2") } should produce [NegativeInputException]
-        exception.getMessage should equal ("negatives not allowed: -2")
-      }
-
-      it ("includes all bad numbers in the message") {
+      it ("throws a NegativeInputException with the bad numbers in the message") {
         val exception = evaluating { StringCalculator.add("-1,2,-3") } should produce [NegativeInputException]
-        exception.getMessage should equal ("negatives not allowed: -1, -3")
+        // TODO would be nice to decouple the values from the message format
+        exception.getMessage should endWith (": -1, -3")
       }
     }
   }
