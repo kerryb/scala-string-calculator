@@ -19,6 +19,10 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
       StringCalculator.add("1,2,3,4,5") should equal(15)
     }
 
+    it ("Handles numbers up to 1000") {
+      StringCalculator.add("1000,24") should equal(1024)
+    }
+
     it ("allows newline-separated numbers") {
       StringCalculator.add("1\n2\n3") should equal(6)
     }
