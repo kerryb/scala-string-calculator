@@ -23,13 +23,17 @@ object StringCalculator {
     def addNumbers(numbers: Array[Int]) = {
       def failOnNegativeNumbers(numbers: Array[Int]) = {
         val negatives = numbers.filter(n => n < 0)
-          if (!negatives.isEmpty) {
+        if (!negatives.isEmpty) {
           throw new NegativeInputException(negatives)
         }
       }
 
+      def ignoreNumbersOver1000(numbers:Array[Int]) = {
+        numbers.filter(n => n <= 1000)
+      }
+
       failOnNegativeNumbers(numbers)
-      numbers.foldLeft(0) { (total, n) => total + n }
+      ignoreNumbersOver1000(numbers).foldLeft(0) { (total, n) => total + n }
     }
 
     if (input isEmpty) {
