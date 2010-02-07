@@ -35,8 +35,12 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
       StringCalculator.add("1\n2,3") should equal(6)
     }
 
-    it ("allows the delimiter to be specified") {
+    it ("allows a single-character delimiter to be specified") {
       StringCalculator.add("//;\n1;2") should equal(3)
+    }
+
+    it ("allows a multi-character delimiter to be specified") {
+      StringCalculator.add("//[***]\n1***2***3") should equal(6)
     }
 
     describe ("with negative input") {
